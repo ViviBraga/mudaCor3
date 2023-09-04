@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudando de cor com Javascript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+        }
+        .container {
+            display: grid;
+            place-items: center;
+            margin-top: 200px;
+            width: 100vw;
+        }
+
+        .btn {
+            margin-top: 20px;
+            width: 180px;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Mudando de cor</h1>
+        <button onclick="mudarCor()" class="btn btn-lg btn-primary">Mude de cor</button>
+        <button onclick="limpa()" class="btn btn-lg btn-secondary"> Início</button>
+    </div>
+    <script>
+
+        var vermelho = Math.round(Math.random()*255); //criar um numero de 0 a 255 e arredondar
+        var verde = Math.round(Math.random()*255);
+        var azul = Math.round(Math.random()*255);
+
+        function limpa() {
+            document.getElementsByTagName('body')[0].style.backgroundColor = '';
+        }
+
+        function mudarCor() {
+            document.getElementsByTagName('body')[0].style.backgroundColor = "rgb(" + vermelho + "," + verde + "," + azul + ")";
+        }
+
+        
+    </script>
+    
+</body>
+</html>
